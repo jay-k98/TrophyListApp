@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.GameProgress">
+
+    <Button
+        android:id="@+id/buttonAdd15min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/plus15min"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLastSession" />
+
+    <Button
+        android:id="@+id/buttonAdd60min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus60min"
+        app:layout_constraintStart_toEndOf="@+id/buttonAdd30min"
+        app:layout_constraintTop_toTopOf="@+id/buttonAdd30min" />
+
+    <TextView
+        android:id="@+id/textViewGameProgress"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorBlue"
+        android:gravity="center"
+        android:text="@string/gameProgress"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gameMaxSilver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewSilver"
+        app:layout_constraintStart_toEndOf="@+id/userProgressSilver"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSilver" />
+
+    <TextView
+        android:id="@+id/userProgressSilver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewSilver"
+        app:layout_constraintStart_toEndOf="@+id/imageViewSilver"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSilver" />
+
+    <ImageView
+        android:id="@+id/gameProgressPicture"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGameProgress" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="128dp" />
+
+    <TextView
+        android:id="@+id/gameProgressTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gameProgressPicture"
+        app:layout_constraintTop_toBottomOf="@+id/textViewGameProgress" />
+
+    <ProgressBar
+        android:id="@+id/progressBarGameProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/gameProgressPicture"
+        app:layout_constraintTop_toBottomOf="@+id/gameProgressGenre" />
+
+    <TextView
+        android:id="@+id/textViewTrophies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/trophies"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBarGameProgress" />
+
+    <TextView
+        android:id="@+id/textViewBronze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/bronze"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTrophies" />
+
+    <TextView
+        android:id="@+id/textViewSilver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/silver"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewSilver"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSilver" />
+
+    <TextView
+        android:id="@+id/textViewGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/gold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewGold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewGold" />
+
+    <TextView
+        android:id="@+id/textViewPlatinum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="@string/platinum"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPlatinum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPlatinum" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="128dp" />
+
+    <ImageView
+        android:id="@+id/imageViewBronze"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewBronze"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toTopOf="@+id/textViewBronze"
+        app:srcCompat="@drawable/trophy_bronze" />
+
+    <ImageView
+        android:id="@+id/imageViewSilver"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBronze"
+        app:srcCompat="@drawable/trophy_silver" />
+
+    <ImageView
+        android:id="@+id/imageViewGold"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewSilver"
+        app:srcCompat="@drawable/trophy_gold" />
+
+    <ImageView
+        android:id="@+id/imageViewPlatinum"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="@+id/guideline10"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewGold"
+        app:srcCompat="@drawable/trophy_platinum" />
+
+    <TextView
+        android:id="@+id/gameMaxBronze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBronze"
+        app:layout_constraintStart_toEndOf="@+id/userProgressBronze"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBronze" />
+
+    <TextView
+        android:id="@+id/userProgressBronze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBronze"
+        app:layout_constraintStart_toEndOf="@+id/imageViewBronze"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBronze" />
+
+    <TextView
+        android:id="@+id/userProgressGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewGold"
+        app:layout_constraintStart_toEndOf="@+id/imageViewGold"
+        app:layout_constraintTop_toTopOf="@+id/imageViewGold" />
+
+    <TextView
+        android:id="@+id/gameMaxGold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewGold"
+        app:layout_constraintStart_toEndOf="@+id/userProgressGold"
+        app:layout_constraintTop_toTopOf="@+id/imageViewGold" />
+
+    <TextView
+        android:id="@+id/userProgressPlatinum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPlatinum"
+        app:layout_constraintStart_toEndOf="@+id/imageViewPlatinum"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPlatinum" />
+
+    <TextView
+        android:id="@+id/gameMaxPlatinum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewPlatinum"
+        app:layout_constraintStart_toEndOf="@+id/userProgressPlatinum"
+        app:layout_constraintTop_toTopOf="@+id/imageViewPlatinum" />
+
+    <Button
+        android:id="@+id/buttonIncreaseBronze"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewBronze"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewBronze" />
+
+    <Button
+        android:id="@+id/buttonDecreaseBronze"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/minus"
+        app:layout_constraintEnd_toStartOf="@+id/buttonIncreaseBronze"
+        app:layout_constraintTop_toTopOf="@+id/buttonIncreaseBronze" />
+
+    <Button
+        android:id="@+id/buttonIncreaseSilver"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewSilver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewSilver" />
+
+    <Button
+        android:id="@+id/buttonDecreaseSilver"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/minus"
+        app:layout_constraintEnd_toStartOf="@+id/buttonIncreaseSilver"
+        app:layout_constraintTop_toTopOf="@+id/buttonIncreaseSilver" />
+
+    <Button
+        android:id="@+id/buttonIncreaseGold"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewGold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageViewGold" />
+
+    <Button
+        android:id="@+id/buttonDecreaseGold"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:text="@string/minus"
+        app:layout_constraintEnd_toStartOf="@+id/buttonIncreaseGold"
+        app:layout_constraintTop_toTopOf="@+id/buttonIncreaseGold" />
+
+    <TextView
+        android:id="@+id/textViewTimeWasted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/timeWasted"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPlatinum" />
+
+    <TextView
+        android:id="@+id/valueTimeWasted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewTimeWasted"
+        app:layout_constraintStart_toStartOf="@+id/userProgressPlatinum"
+        app:layout_constraintTop_toTopOf="@+id/textViewTimeWasted" />
+
+    <Button
+        android:id="@+id/buttonAdd30min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/plus30min"
+        app:layout_constraintStart_toEndOf="@+id/buttonAdd15min"
+        app:layout_constraintTop_toTopOf="@+id/buttonAdd15min" />
+
+    <TextView
+        android:id="@+id/timeLastSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/timeOfLastSession"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTimeWasted" />
+
+    <Button
+        android:id="@+id/buttonSaveProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_rounded_blue"
+        android:text="@string/save"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCancelProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_rounded_blue"
+        android:text="@string/cancel"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSaveProgress" />
+
+    <TextView
+        android:id="@+id/valueTimeLastSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/timeLastSession"
+        app:layout_constraintStart_toStartOf="@+id/valueTimeWasted"
+        app:layout_constraintTop_toTopOf="@+id/timeLastSession" />
+
+    <TextView
+        android:id="@+id/gameProgressGenre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gameProgressPicture"
+        app:layout_constraintTop_toBottomOf="@+id/gameProgressTitle" />
+
+    <Button
+        android:id="@+id/buttonMinus15Min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/minus15min"
+        app:layout_constraintStart_toStartOf="@+id/buttonAdd15min"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAdd15min" />
+
+</android.support.constraint.ConstraintLayout>

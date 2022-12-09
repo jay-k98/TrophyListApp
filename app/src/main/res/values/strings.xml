@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">TrophyList</string>
+    <string name="madeBy">made by Jonas Klock 876367 and Aaron Santamaria 877298</string>
+    <string name="checkBoxRemember">Remember</string>
+    <string name="editTextUsername">Enter username</string>
+    <string name="loginButton">Login</string>
+    <string name="invalidUsername">Invalid Username!</string>
+    <string name="slashMaxValue">/</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="title">Title</string>
+    <string name="gameEditorTitle">Game-Editor</string>
+    <string name="enterTitleHere">title&#8230;</string>
+    <string name="genre">Genre</string>
+    <string name="trophyQuantities">Trophy Quantities</string>
+    <string name="platinumAvailable">Platinum Available?</string>
+    <string name="hundredPercent">100%</string>
+    <string name="gameProgress">Game Progress</string>
+    <string name="trophies">Trophies</string>
+    <string name="bronze">Bronze</string>
+    <string name="silver">Silver</string>
+    <string name="gold">Gold</string>
+    <string name="platinum">Platinum</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="timeWasted">Time Wasted</string>
+    <string name="plus15min">+ 15min</string>
+    <string name="plus30min">+ 30min</string>
+    <string name="plus60min">+ 60min</string>
+    <string name="minus15min">- 15min</string>
+    <string name="timeOfLastSession">Time of last session</string>
+    <string name="statistics">Statistics</string>
+    <string name="gamesOwned">Games owned</string>
+    <string name="time_spent">Time spent</string>
+    <string name="average_time_per_game">Avg. time/game</string>
+    <string name="all_trophies">All trophies</string>
+    <string name="pick_a_profile_picture">Pick a profile picture</string>
+    <string name="reset">Reset</string>
+
+</resources>

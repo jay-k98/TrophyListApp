@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <ImageView
+        android:id="@+id/gameItemPicture"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/trophy_bronze"
+        tools:layout_conversion_wrapHeight="168"
+        tools:layout_conversion_wrapWidth="168" />
+
+    <TextView
+        android:id="@+id/gameItemTitle"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/gameItemPicture"
+        app:layout_constraintTop_toTopOf="@+id/gameItemPicture"
+        tools:layout_conversion_wrapHeight="50"
+        tools:layout_conversion_wrapWidth="819" />
+
+    <ProgressBar
+        android:id="@+id/gameItemProgressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintStart_toEndOf="@+id/gameItemPicture"
+        app:layout_constraintTop_toBottomOf="@+id/gameItemTitle"
+        tools:layout_conversion_wrapHeight="42"
+        tools:layout_conversion_wrapWidth="848" />
+
+    <ImageView
+        android:id="@+id/gameItemBronzeIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gameItemBronzeCount"
+        app:layout_constraintStart_toEndOf="@+id/gameItemPicture"
+        app:layout_constraintTop_toTopOf="@+id/gameItemBronzeCount"
+        app:srcCompat="@drawable/trophy_bronze"
+        tools:layout_conversion_wrapHeight="42"
+        tools:layout_conversion_wrapWidth="42" />
+
+    <TextView
+        android:id="@+id/gameItemBronzeCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/gameItemBronzeIcon"
+        app:layout_constraintTop_toBottomOf="@+id/gameItemProgressBar"
+        tools:layout_conversion_wrapHeight="50"
+        tools:layout_conversion_wrapWidth="84" />
+
+    <ImageView
+        android:id="@+id/gameItemSilverIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gameItemSilverCount"
+        app:layout_constraintStart_toEndOf="@+id/gameItemBronzeCount"
+        app:layout_constraintTop_toTopOf="@+id/gameItemSilverCount"
+        app:srcCompat="@drawable/trophy_silver"
+        tools:layout_conversion_wrapHeight="42"
+        tools:layout_conversion_wrapWidth="42" />
+
+    <TextView
+        android:id="@+id/gameItemSilverCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/gameItemSilverIcon"
+        app:layout_constraintTop_toBottomOf="@+id/gameItemProgressBar"
+        tools:layout_conversion_wrapHeight="50"
+        tools:layout_conversion_wrapWidth="63" />
+
+    <ImageView
+        android:id="@+id/gameItemGoldIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gameItemGoldCount"
+        app:layout_constraintStart_toEndOf="@+id/gameItemSilverCount"
+        app:layout_constraintTop_toTopOf="@+id/gameItemGoldCount"
+        app:srcCompat="@drawable/trophy_gold"
+        tools:layout_conversion_wrapHeight="42"
+        tools:layout_conversion_wrapWidth="42" />
+
+    <TextView
+        android:id="@+id/gameItemGoldCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/gameItemGoldIcon"
+        app:layout_constraintTop_toBottomOf="@+id/gameItemProgressBar"
+        tools:layout_conversion_wrapHeight="50"
+        tools:layout_conversion_wrapWidth="63" />
+
+    <ImageView
+        android:id="@+id/gameItemPlatIcon"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gameItemPlatCount"
+        app:layout_constraintStart_toEndOf="@+id/gameItemGoldCount"
+        app:layout_constraintTop_toTopOf="@+id/gameItemPlatCount"
+        app:srcCompat="@drawable/trophy_platinum"
+        tools:layout_conversion_wrapHeight="42"
+        tools:layout_conversion_wrapWidth="42" />
+
+    <TextView
+        android:id="@+id/gameItemPlatCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/gameItemPlatIcon"
+        app:layout_constraintTop_toBottomOf="@+id/gameItemProgressBar"
+        tools:layout_conversion_wrapHeight="50"
+        tools:layout_conversion_wrapWidth="42" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="339dp" />
+
+
+</android.support.constraint.ConstraintLayout>

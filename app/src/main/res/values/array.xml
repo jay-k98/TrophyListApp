@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="genre_array">
+        <item>Action</item>
+        <item>Adventure</item>
+        <item>Action-Adventure</item>
+        <item>Sports</item>
+        <item>Shooter</item>
+        <item>Platformer</item>
+        <item>Racing</item>
+        <item>RPG</item>
+        <item>Puzzle</item>
+        <item>Simulation</item>
+        <item>Strategy</item>
+    </string-array>
+    <string-array name="filter_array">
+        <item>All</item>
+        <item>Action</item>
+        <item>Adventure</item>
+        <item>Action-Adventure</item>
+        <item>Sports</item>
+        <item>Shooter</item>
+        <item>Platformer</item>
+        <item>Racing</item>
+        <item>RPG</item>
+        <item>Puzzle</item>
+        <item>Simulation</item>
+        <item>Strategy</item>
+    </string-array>
+    <string-array name="order_by_array">
+        <item>Title</item>
+        <item>Genre</item>
+        <item>Percent</item>
+    </string-array>
+</resources>

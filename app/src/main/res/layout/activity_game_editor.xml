@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.GameEditor">
+
+    <Button
+        android:id="@+id/buttonCancelProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_rounded_blue"
+        android:text="@string/cancel"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSaveProgress" />
+
+    <Button
+        android:id="@+id/buttonSaveProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_rounded_blue"
+        android:text="@string/save"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/btn_rounded_blue"
+        android:text="@string/reset"
+        android:textColor="@color/colorWhite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/editorTitle"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorBlue"
+        android:gravity="center_vertical"
+        android:text="@string/gameEditorTitle"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/enterInformationTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/title"
+        android:textSize="19sp"
+        app:layout_constraintEnd_toEndOf="@+id/enterInformationGenre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editorTitle" />
+
+    <EditText
+        android:id="@+id/editTextEnterTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_rounded_blue_stroke"
+        android:ems="10"
+        android:hint="@string/enterTitleHere"
+        android:inputType="textPersonName"
+        android:padding="8dp"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="@+id/enterInformationTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enterInformationTitle"
+        app:layout_constraintTop_toTopOf="@+id/enterInformationTitle" />
+
+    <TextView
+        android:id="@+id/enterInformationGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/genre"
+        android:textSize="19sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEnterTitle" />
+
+    <Spinner
+        android:id="@+id/spinnerGenre"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/btn_rounded_blue_stroke"
+        app:layout_constraintBottom_toBottomOf="@+id/enterInformationGenre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enterInformationGenre"
+        app:layout_constraintTop_toTopOf="@+id/enterInformationGenre" />
+
+    <TextView
+        android:id="@+id/enterInformationQuantities"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/trophyQuantities"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGenre" />
+
+    <ImageView
+        android:id="@+id/bronzeIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextBronzeCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextBronzeCount"
+        app:srcCompat="@drawable/trophy_bronze" />
+
+    <ImageView
+        android:id="@+id/silverIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextSilverCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextSilverCount"
+        app:srcCompat="@drawable/trophy_silver" />
+
+    <ImageView
+        android:id="@+id/goldIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextGoldCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextGoldCount"
+        app:srcCompat="@drawable/trophy_gold" />
+
+    <ImageView
+        android:id="@+id/platIcon"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextGoldCount"
+        app:srcCompat="@drawable/trophy_platinum" />
+
+    <EditText
+        android:id="@+id/editTextBronzeCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/btn_rounded_blue_stroke"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/bronzeIcon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/enterInformationQuantities"
+        app:layout_constraintTop_toTopOf="@+id/enterInformationQuantities" />
+
+
+    <EditText
+        android:id="@+id/editTextSilverCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_rounded_blue_stroke"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextBronzeCount"
+        app:layout_constraintStart_toStartOf="@+id/editTextBronzeCount"
+        app:layout_constraintTop_toBottomOf="@+id/editTextBronzeCount" />
+
+    <EditText
+        android:id="@+id/editTextGoldCount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/btn_rounded_blue_stroke"
+        android:ems="10"
+        android:inputType="number"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/editTextSilverCount"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/editTextSilverCount"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSilverCount" />
+
+
+    <CheckBox
+        android:id="@+id/checkBoxPlat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:checked="true"
+        android:text="@string/platinumAvailable"
+        app:layout_constraintBottom_toBottomOf="@+id/platIcon"
+        app:layout_constraintEnd_toStartOf="@+id/platIcon"
+        app:layout_constraintTop_toTopOf="@+id/platIcon" />
+
+
+
+
+</android.support.constraint.ConstraintLayout>
