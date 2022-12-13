@@ -248,7 +248,6 @@ public class GameList extends AppCompatActivity implements GameListAdapter.OnIte
                 genreStr +
                 percentStr +
                 " ORDER BY " + orderBy + " COLLATE NOCASE " + order;
-        Toast.makeText(getApplicationContext(),query,Toast.LENGTH_LONG).show();
         Log.d("QUERY", query);
         return mDatabase.rawQuery(query, null);
     }
