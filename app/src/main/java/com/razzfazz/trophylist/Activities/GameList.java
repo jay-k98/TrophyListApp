@@ -18,10 +18,12 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -197,6 +199,12 @@ public class GameList extends AppCompatActivity implements GameListAdapter.OnIte
                 }
             });
         }
+        checkBox100Percent.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                mAdapter.swapCursor(getFilterCursor());
+            }
+        });
     }
 
     // by swiping left or right on an item in the list it gets removed
@@ -219,86 +227,30 @@ public class GameList extends AppCompatActivity implements GameListAdapter.OnIte
     // queries the gamecollection.db with the filters and order-by-statement, that the user selected
     private Cursor getFilterCursor() {
         String query;
-        if(!checkBox100Percent.isChecked()) {
-            if (filter.equals("All")) {
-                // query for getting all games with selected filters and order
-                query = "SELECT " + DBHelper.GAME_INFO_ID_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_TITLE_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_PICTURE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_BRONZE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_SILVER_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_GOLD_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_PLAT_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX +
-                        " FROM " + DBHelper.GAME_INFO_TABLE +
-                        " gi INNER JOIN " + DBHelper.USER_PROGRESS_TABLE +
-                        " up WHERE " + DBHelper.GAME_INFO_ID_WITH_PREFIX + " = " +
-                        DBHelper.USER_PROGRESS_ID_WITH_PREFIX + " ORDER BY " +
-                        orderBy + " COLLATE NOCASE " + order;
-                Log.d("QUERY", query);
-                return mDatabase.rawQuery(query, null);
-            } else {
-                // query for getting all games with a specific genre with selected filters and order
-                query = "SELECT " + DBHelper.GAME_INFO_ID_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_TITLE_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_PICTURE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_BRONZE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_SILVER_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_GOLD_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_PLAT_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX +
-                        " FROM " + DBHelper.GAME_INFO_TABLE +
-                        " gi INNER JOIN " + DBHelper.USER_PROGRESS_TABLE +
-                        " up WHERE " + DBHelper.GAME_INFO_ID_WITH_PREFIX + " = " +
-                        DBHelper.USER_PROGRESS_ID_WITH_PREFIX + " AND " +
-                        DBHelper.GAME_INFO_GENRE_WITH_PREFIX + " = '" +
-                        spinnerFilter.getSelectedItem().toString() + "' ORDER BY " +
-                        orderBy + " COLLATE NOCASE " + order;
-                Log.d("QUERY", query);
-                return mDatabase.rawQuery(query, null);
-            }
-        } else {
-            if (filter.equals("All")) {
-                // query for getting all games completed with 100% with selected filters and order
-                query = "SELECT " + DBHelper.GAME_INFO_ID_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_TITLE_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_PICTURE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_BRONZE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_SILVER_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_GOLD_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_PLAT_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX +
-                        " FROM " + DBHelper.GAME_INFO_TABLE +
-                        " gi INNER JOIN " + DBHelper.USER_PROGRESS_TABLE +
-                        " up WHERE " + DBHelper.GAME_INFO_ID_WITH_PREFIX + " = " +
-                        DBHelper.USER_PROGRESS_ID_WITH_PREFIX + " AND " +
-                        DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX + " = 100 ORDER BY " +
-                        orderBy + " COLLATE NOCASE " + order;
-                Log.d("QUERY", query);
-                return mDatabase.rawQuery(query, null);
-            } else {
-                // query for getting all games of a specific genre completed with 100% with selected
-                // filters and order
-                query = "SELECT " + DBHelper.GAME_INFO_ID_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_TITLE_WITH_PREFIX + "," +
-                        DBHelper.GAME_INFO_PICTURE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_BRONZE_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_SILVER_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_GOLD_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PROGRESS_PLAT_WITH_PREFIX + "," +
-                        DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX +
-                        " FROM " + DBHelper.GAME_INFO_TABLE +
-                        " gi INNER JOIN " + DBHelper.USER_PROGRESS_TABLE +
-                        " up WHERE " + DBHelper.GAME_INFO_ID_WITH_PREFIX + " = " +
-                        DBHelper.USER_PROGRESS_ID_WITH_PREFIX + " AND " +
-                        DBHelper.GAME_INFO_GENRE_WITH_PREFIX + " = '" +
-                        spinnerFilter.getSelectedItem().toString() + "' AND " +
-                        DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX + " = 100 ORDER BY " +
-                        orderBy + " COLLATE NOCASE " + order;
-                Log.d("QUERY", query);
-                return mDatabase.rawQuery(query, null);
-            }
-        }
+        String percentStr = (checkBox100Percent.isChecked()) ? " AND " +
+                DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX + " = 100 " : "";
+        String genreStr = (!filter.equals("All")) ? " AND " +
+                DBHelper.GAME_INFO_GENRE_WITH_PREFIX + " = '" +
+                spinnerFilter.getSelectedItem().toString() + "' " : "";
+
+        query = "SELECT " + DBHelper.GAME_INFO_ID_WITH_PREFIX + "," +
+                DBHelper.GAME_INFO_TITLE_WITH_PREFIX + "," +
+                DBHelper.GAME_INFO_PICTURE_WITH_PREFIX + "," +
+                DBHelper.USER_PROGRESS_PROGRESS_BRONZE_WITH_PREFIX + "," +
+                DBHelper.USER_PROGRESS_PROGRESS_SILVER_WITH_PREFIX + "," +
+                DBHelper.USER_PROGRESS_PROGRESS_GOLD_WITH_PREFIX + "," +
+                DBHelper.USER_PROGRESS_PROGRESS_PLAT_WITH_PREFIX + "," +
+                DBHelper.USER_PROGRESS_PERCENT_WITH_PREFIX +
+                " FROM " + DBHelper.GAME_INFO_TABLE +
+                " gi INNER JOIN " + DBHelper.USER_PROGRESS_TABLE +
+                " up WHERE " + DBHelper.GAME_INFO_ID_WITH_PREFIX + " = " +
+                DBHelper.USER_PROGRESS_ID_WITH_PREFIX +
+                genreStr +
+                percentStr +
+                " ORDER BY " + orderBy + " COLLATE NOCASE " + order;
+        Toast.makeText(getApplicationContext(),query,Toast.LENGTH_LONG).show();
+        Log.d("QUERY", query);
+        return mDatabase.rawQuery(query, null);
     }
 
     // toggles the order of the list, depending on its previous state ASC/DESC and updates the
